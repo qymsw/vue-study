@@ -4,29 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>注册组件</title>
+    <title>Document</title>
     <script src="../vue.min.js"></script>
 </head>
 <body>
     <div id="app">
-        <my-component></my-component>
-    </div>
-    <div id="div1">
-        <my-component></my-component>
+        <my-component message="dasdasd" aaa="1234"></my-component>
     </div>
     <script>
         Vue.component('my-component',{
-            template:'<div>{{message}}{{aaa}}</div>',
-            data:function (){
-                return {
-                    message: '组件内容',
-                    aaa:'dfdfdfdfdff'
-                }
-            }
+            props:['message','aaa'],
+            template:'<div>{{message}}{{aaa}}</div>'
         })
         var app = new Vue({
             el:'#app'
-        })       
+        })
     </script>
 </body>
 </html>
