@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>注册组件</title>
+    <script src="../vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="aaaaa">
+        <my-component :message="aaaaa"></my-component>
+    </div>
+    <!-- <div id="div1">
+        <my-component></my-component>
+    </div> -->
+    <script>
+        Vue.component('my-component',{
+            props:['message'],
+            template:'<div>{{message}}</div>'
+        })
+        var app = new Vue({
+            el:'#app',
+            data:{
+                aaaaa:''
+            }
+        })
+        var app2 = new Vue({
+            el:'#div1'
+        })
+    </script>
+</body>
+</html>
