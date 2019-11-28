@@ -15,8 +15,9 @@
         </div>
         <script>
             Vue.component('my-component',{  
-                props:['value']              ,
-                template:'<button @click="handleClick">+1</button>',
+                props:['value'],
+                template:'<input :value="value" @input="updateValue">',
+                // template:'<div>{{value}}</div>'
                 methods: {
                    updateValue:function (event) {
                        this.$emit('input',event.target.value)

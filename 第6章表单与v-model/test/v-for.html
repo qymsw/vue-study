@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div">
+        <select v-model="selectedVal" >
+            <option v-for="option in options">{{option.value}}</option>
+        </select>                
+        <p>这里显示数据属性 text 的值<br />
+        （原是空数组，被传入被选中的&lt;option&gt; 元素的value值）:<span id="important">{{selectedVal}}</span>
+        <br/>
+        </p>
+    </div>
+            
+    <script>
+    var vm = new Vue({
+        el:"#div",
+        data:{
+            selectedVal:"",
+            options:[
+                {num:"a",value:"apple"},
+                {num:"b",value:"banana"},
+                {num:"c",value:"cherry"}
+            ]
+        }
+    })
+        
+    </script>
+
+</body>
+</html>

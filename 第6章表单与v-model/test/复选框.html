@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../../vue.min.js"></script>
+</head>
+<body>
+    <div id="div">
+        <input type="checkbox" id="checkbox" v-model="text" />
+        <label for="checkbox">单个复选框</label>                
+        <p>这里显示数据属性text 的值（布尔值）:<span id="important">{{text}}</span></p>
+    </div>               
+    <script>
+        var vm = new Vue({
+            el:"#div",
+            data:{text:null}
+        })
+    </script>
+              
+</body>
+</html>

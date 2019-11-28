@@ -15,6 +15,7 @@
         <script>
             Vue.component('my-component',{                
                 template:'<div>\
+                             <p>{{this.counter}}</p>\
                              <button @click="handleIncrease">+1</button>\
                              <button @click="handleReduce">-1</button>\
                           </div>',
@@ -26,11 +27,11 @@
                 methods: {
                     handleIncrease:function () {
                         this.counter++
-                        this.$emit('increase',this.counter++)
+                        this.$emit('increase',this.counter)
                     },
                     handleReduce:function () {
                         this.counter--
-                        this.$emit('reduce',this.counter++)
+                        this.$emit('reduce',this.counter)
                     }
                 }               
             })
@@ -42,7 +43,7 @@
                 },
                 methods: {
                     handleGetTotal: function (total) {
-                        this.total = total
+                        // this.total = total
                         // console.log(total)
                     }
                 }   

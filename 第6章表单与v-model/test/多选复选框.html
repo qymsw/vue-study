@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../../vue.min.js"></script>
+</head>
+<body>
+    <div id="div">
+        <input type="radio" id="a" v-model="text" value="apple" />
+        <label for="a">苹果</label>
+        <input type="radio" id="b" v-model="text"  value="banana"/>
+        <label for="b">香蕉</label>
+        <input type="radio" id="c" v-model="text"  value="watermelon"/>
+        <label for="c">西瓜</label>                
+        <p>这里显示数据属性 text 的值<br />
+        （原是空数组[ ]，被放入被选中的多选框的value的值）:<span id="important">{{text}}</span></p>
+    </div>            
+    <script>
+        var vm = new Vue({
+            el:"#div",
+            data:{text:[]}
+        })            
+    </script>
+
+</body>
+</html>
